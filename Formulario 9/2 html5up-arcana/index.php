@@ -2,27 +2,28 @@
 
 	if ((isset($_GET['page'])) && ($_GET['page']==="controller_users") ){
 
-		include("includes/top_page_users.php");
+		include("view/include/top_page_users.php");
 	}else{
-		include("includes/top_page.php");
+		include("view/include/top_page.php");
 	}
 	session_start();
 ?>
 <div id="wrapper">		
    
-    	<?php include("includes/header.php"); ?>        
+    	<?php include("view/include/header.php"); ?>        
  
     <div id="menu">
-    		<?php include("includes/menu.php"); ?>
+    		<?php include("view/include/menu.php"); ?>
 	    </div>	
     	<div id="contenido">
     	<?php 
 		
-		include("includes/pages.php"); ?>        
+		include("view/include/pages.php"); ?>        
+
         <br style="clear:both;" />
     </div>
     <div id="footer">   	   
-	    <?php include("includes/footer.php"); ?>        
+	    <?php include("view/include/footer.php"); ?>        
     </div>
 </div>
-<?php include("includes/bottom_page.php"); ?>
+<?php include("view/include/bottom_page.php"); ?>
