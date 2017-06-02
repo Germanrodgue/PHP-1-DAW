@@ -55,6 +55,25 @@
                 ?>
             </td>
         </tr>
+
+        <tr>
+            <td>Nombre de la imagen: </td>
+            <td>
+                <?php
+                    echo $user['imgnombre'];
+                ?>
+            </td>
+        </tr>
+
+          <tr>
+            <td>Descripcion: </td>
+            <td>
+                <?php
+                    echo $user['Descripcion'];
+                ?>
+            </td>
+        </tr>
+
         
         <tr>
            

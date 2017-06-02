@@ -1,8 +1,8 @@
 
-    <form autocomplete="on" method="post" name="delete_user" id="delete_user" action="index.php?page=controller_users&op=delete&id=<?php echo $_GET['id']; ?>">
+    <form autocomplete="on" method="post" name="delete_user" id="delete_user" action="index.php?page=controller_users&op=delete_all">
         <table border='0'>
             <tr>
-                <td align="center"  colspan="2"><h3>¿Desea seguro borrar al usuario <?php echo $_GET['id']; ?>?</h3></td>
+                <td align="center"  colspan="2"><h3>¿Desea seguro borrar a todos los usuarios? </h3></td>
                 
             </tr>
             <tr>

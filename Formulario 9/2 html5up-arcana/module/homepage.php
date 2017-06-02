@@ -1,6 +1,4 @@
 	<!-- Header -->
-			
-
 		<!-- Banner -->
 			<section id="banner">
 				<header>

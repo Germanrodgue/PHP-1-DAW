@@ -10,22 +10,22 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.dropotron.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/skel-layers.min.js"></script>
-    <script src="js/init.js"></script>
+    <!--[if lte IE 8]><script src="view/template/css/ie/html5shiv.js"></script><![endif]-->
+    <script src="view/template/js/jquery.min.js"></script>
+    <script src="view/template/js/jquery.dropotron.min.js"></script>
+    <script src="view/template/js/skel.min.js"></script>
+    <script src="view/template/js/skel-layers.min.js"></script>
+    <script src="view/template/js/init.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />
 
-    <noscript>
-      <link rel="stylesheet" href="css/skel.css" />
-      <link rel="stylesheet" href="css/style.css" />
-      <link rel="stylesheet" href="css/style-wide.css" />
-    </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+      
+      <link rel="stylesheet" href="view/template/css/skel.css" />
+      <link rel="stylesheet" href="view/template/css/style.css" />
+      <link rel="stylesheet" href="view/template/css/style-wide.css" />
+   
+    <!--[if lte IE 8]><link rel="stylesheet" href="view/template/css/ie/v8.css" /><![endif]-->
   </head>
   <body>

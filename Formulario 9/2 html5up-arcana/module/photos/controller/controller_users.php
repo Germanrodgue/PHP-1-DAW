@@ -1,6 +1,5 @@
 <?php
 include("module/photos/model/functions.inc.php");
-include("classes/Browser.class.php");
 include("module/photos/model/DAO.php");
 $link = mysqli_connect('127.0.0.1', 'root', '');
 if ($link === false) {
@@ -18,28 +17,38 @@ switch ($_GET['op']) {
     case 'create';
         if (isset($_POST['Enviar'])) {
             $result = validate_user();
-            //debug($result);
+            
+          
             if ($result['resultado']) {
                 $arrArgument = array(
                     'nombre' => $result['datos']['nombre'],
                     'email' => $result['datos']['correo'],
                     'fecha' => $result['datos']['fecha'],
                     'link' => $result['datos']['link'],
-                    'tipo' => $result['datos']['tipo']
+                    'imgnombre' => $result['datos']['imgnombre'],
+                    'descr' => $result['datos']['descr'],
+                    'tipo' => $result['datos']['tipo'],
+                    'loc' => $result['datos']['location'],
+                    'formato' => $_POST['formato']
                 );
-                debug($arrArgument);
+                
                 $_SESSION['user'] = $arrArgument;
+
                 $daouser          = new DAO();
                 $rdo              = $daouser->nuevo_user($_SESSION['user']);
+               
                 if ($rdo) {
+
                     echo '<script language="javascript">alert("Registrado en la base de datos correctamente")</script>';
                     $callback = 'index.php?page=controller_users&op=list';
                     die('<script>window.location.href="' . $callback . '";</script>');
                 }
+
             } else {
                 $error = $result['error'];
                 //debug($error);
             }
+        
         }
         include("module/photos/view/create_user.php");
         break;
@@ -55,8 +64,15 @@ switch ($_GET['op']) {
                     'email' => $result['datos']['correo'],
                     'fecha' => $result['datos']['fecha'],
                     'link' => $result['datos']['link'],
-                    'tipo' => $result['datos']['tipo']
+                    'tipo' => $result['datos']['tipo'],
+                    'imgnombre' => $result['datos']['imgnombre'],
+                    'descr' => $result['datos']['descr'],
+                    'tipo' => $result['datos']['tipo'],
+                    'loc' => $result['datos']['location'],
+                    'formato' => $_POST['formato']
                 );
+
+
                 //redirigir a otra p�gina con los datos de $arrArgument y $mensaje
                 $_SESSION['user'] = $arrArgument;
                 //header("Location:index.php?page=results_user1");
@@ -101,6 +117,8 @@ switch ($_GET['op']) {
         $daouser = new DAO();
         $rdo     = $daouser->select_user($_GET['id']);
         $user    = get_object_vars($rdo);
+
+        
         if ($rdo) {
             include("module/photos/view/read_user.php");
         }
@@ -125,6 +143,27 @@ switch ($_GET['op']) {
             }
         }
         include("module/photos/view/delete_user.php");
+        break;
+        case 'delete_all';
+        if (isset($_POST['delete'])) {
+            try {
+                $daouser = new DAO();
+            }
+            catch (Exception $e) {
+                $callback = 'index.php?page=503';
+                die('<script>window.location.href="' . $callback . '";</script>');
+            }
+            $rdo = $daouser->delete_all_user();
+            if ($rdo) {
+                echo '<script language="javascript">alert("Borrado en la base de datos correctamente")</script>';
+                $callback = 'index.php?page=controller_users&op=list';
+                die('<script>window.location.href="' . $callback . '";</script>');
+            } else {
+                $callback = 'index.php?page=503';
+                die('<script>window.location.href="' . $callback . '";</script>');
+            }
+        }
+        include("module/photos/view/delete_all.php");
         break;
     default;
         include("view/include/error404.php");

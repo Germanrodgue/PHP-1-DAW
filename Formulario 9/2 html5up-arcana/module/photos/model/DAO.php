@@ -3,11 +3,21 @@
      include ("model/connect.php");
 	class DAO{
 		function nuevo_user($user){
+			
+		//	print_r($user['formato']);
+			//die();
+			$form=' ';
+		foreach ($user['formato'] as $indice) {
+        	    $form=$form."$indice:";
+        	}
+        		$form = ltrim($form);
 
-			 $sql = "INSERT INTO usuarios(nombre, email, fecha, tipo, link) VALUES ('$user[nombre]' , '$user[email]', '$user[fecha]', '$user[tipo]', '$user[link]')";
+			 $sql = "INSERT INTO usuarios(nombre, email, fecha, tipo, link, imgnombre, Descripcion, formato, Localizacion) VALUES ('$user[nombre]' , '$user[email]', '$user[fecha]', '$user[tipo]', '$user[link]', '$user[imgnombre]', '$user[descr]','$form', '$user[loc]')";
             
             $conexion = Conectar::con();
+
             $res = mysqli_query($conexion, $sql);
+
             Conectar::close($conexion);
 			return $res;
 		}
@@ -44,8 +54,12 @@
             return $res;
 		}
 		function update_user($user){
-
-			 $sql = "UPDATE usuarios SET nombre='$user[nombre]', email='$user[email]', fecha='$user[fecha]', tipo='$user[tipo]', link='$user[link]' WHERE id='$user[id]'";  
+			$form=' ';
+			foreach ($user['formato'] as $indice) {
+        	    $form=$form."$indice:";
+        	}
+        	$form = ltrim($form);
+			 $sql = "UPDATE usuarios SET nombre='$user[nombre]', email='$user[email]', fecha='$user[fecha]', tipo='$user[tipo]', link='$user[link]', imgnombre='$user[imgnombre]', Descripcion='$user[descr]' ,formato='$form', Localizacion='$user[loc]'  WHERE id='$user[id]'";  
             $conexion = Conectar::con();
             $res = mysqli_query($conexion, $sql);
             Conectar::close($conexion);
@@ -59,4 +73,13 @@
             Conectar::close($conexion);
             return $res;
 		}
+		function delete_all_user(){
+			$sql = "DELETE FROM usuarios";
+			
+			$conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql);
+            Conectar::close($conexion);
+            return $res;
+		}
+
 	}

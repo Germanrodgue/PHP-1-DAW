@@ -1,6 +1,6 @@
 function validate_nombre(nombre) {
     if (nombre.length > 0) {
-        var regexp = /^[a-zA-Z0-9]*$/;
+        var regexp = /^[a-zA-Z]*$/;
         return regexp.test(nombre);
     }
     return false;
@@ -22,25 +22,28 @@ function validate_fecha(fecha) {
 }
 function validate_link(link) {
     if (link.length > 0) {
-        var regexp = /^[a-zA-Z0-9]*$/;
+        var regexp = /(https?:\/\/[^\s]+)/;
         return regexp.test(link);
     }
     return false;
 }
 function validate_imgnombre(imgnombre) {
     if (imgnombre.length > 0) {
-        var regexp = /^[a-zA-Z0-9]*$/;
+        var regexp = /^[a-zA-Z]*$/;
         return regexp.test(imgnombre);
     }
     return false;
 }
-/*function validate_date_birthday(date_birthday) {
-    if (date_birthday.length > 0) {
-        var regexp = /\d{2}.\d{2}.\d{4}$/;
-        return regexp.test(date_birthday);
+
+function validate_descr(descr) {
+    if (descr.length > 0) {
+        var regexp = /^[a-zA-Z ]{5,20}$/i;
+        return regexp.test(descr);
     }
     return false;
-}*/
+}
+
+
 function validate_user() {
     var result = true;
 
@@ -52,6 +55,11 @@ function validate_user() {
     var fecha = document.getElementById('demo1').value;
 
     var link = document.getElementById('link').value;
+
+    var imgnombre = document.getElementById('imgnombre').value;
+
+    var descr = document.getElementById('descr').value;
+
    
     var v_nombre = validate_nombre(nombre);
    
@@ -61,7 +69,9 @@ function validate_user() {
 
     var v_link = validate_link(link);
 
-    var v_imgnombre = validate_link(link);
+    var v_imgnombre = validate_imgnombre(imgnombre);
+
+    var v_descr = validate_imgnombre(descr);
     //var v_date_birthday = validate_date_birthday(date_birthday);
 
 
@@ -94,6 +104,20 @@ function validate_user() {
         result = false;
     } else {
         document.getElementById('e_link').innerHTML = "";
+    }
+
+    if (!v_imgnombre) {
+        document.getElementById('e_imgnombre').innerHTML = "El nombre de la imagen introducido no es valido";
+        result = false;
+    } else {
+        document.getElementById('e_imgnombre').innerHTML = "";
+    }
+
+     if (!v_descr) {
+        document.getElementById('e_descr').innerHTML = "La descripcion debe ser entre 20 y 140 caracteres";
+        result = false;
+    } else {
+        document.getElementById('e_descr').innerHTML = "";
     }
 
     /*if (!v_date_birthday) {

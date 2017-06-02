@@ -7,13 +7,19 @@
 		include("view/include/top_page.php");
 	}
 	session_start();
+	
 ?>
 <div id="wrapper">		
    
     	<?php include("view/include/header.php"); ?>        
  
     <div id="menu">
-    		<?php include("view/include/menu.php"); ?>
+    		<?php
+			$_SESSION['page']=$_GET['page'];
+    		 include("view/include/menu.php"); 
+
+
+    		?>
 	    </div>	
     	<div id="contenido">
     	<?php 
