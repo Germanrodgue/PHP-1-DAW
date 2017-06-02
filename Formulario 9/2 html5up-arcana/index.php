@@ -7,7 +7,14 @@
 		include("view/include/top_page.php");
 	}
 	session_start();
+	if ((isset($_GET['page']))){
+
+	$_SESSION['page']=$_GET['page'];
 	
+	} else {
+
+	$_SESSION['page']="home";		
+	}
 ?>
 <div id="wrapper">		
    
@@ -15,7 +22,8 @@
  
     <div id="menu">
     		<?php
-			$_SESSION['page']=$_GET['page'];
+
+				
     		 include("view/include/menu.php"); 
 
 

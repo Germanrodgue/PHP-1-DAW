@@ -72,7 +72,7 @@
 		
 
 		if(isset($resultado['link'])){
-
+			
 			$link = isImage($resultado['link']);
 		}
 		if(!$resultado['nombre']){

@@ -70,11 +70,34 @@
             <tr>
 
                             <td>Localizacion: </td>
-                            <td><select multiple size="3" name="location" id="loc[]" placeholder="Localizacion">
-
+                            <td><select name="location" id="location" placeholder="Localizacion">
+                       <?php
+                              
+                                   if ($user['Localizacion']==="Urbano"){
+                              ?>
                                 <option value="Urbano" selected>Urbano</option>
                                 <option value="Naturaleza">Naturaleza</option>
                                 <option value="Interior">Interior</option>
+
+                                 <?php
+                               }
+                                     if ($user['Localizacion']==="Naturaleza"){
+                                  ?>
+
+                                 <option value="Urbano" >Urbano</option>
+                                <option value="Naturaleza" selected>Naturaleza</option>
+                                <option value="Interior">Interior</option>
+                    
+                                  <?php
+                                }
+                                     if ($user['Localizacion']==="Interior"){
+                                  ?> 
+                                     <option value="Urbano" >Urbano</option>
+                                <option value="Naturaleza" >Naturaleza</option>
+                                <option value="Interior" selected>Interior</option>
+                                  <?php
+                                   }
+                                  ?> 
                                 </select></td>
             </tr>
 
@@ -83,7 +106,7 @@
                     <?php
 
                     $check=explode(":", $user['formato']);
-                    
+                   
                      ?>
                      <?php
                      

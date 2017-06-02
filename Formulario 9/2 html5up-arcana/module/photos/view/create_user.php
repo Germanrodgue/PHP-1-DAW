@@ -46,7 +46,7 @@
 
             <tr>
                             <td>Localizacion: </td>
-                            <td><select multiple size="3" name="location" id="loc[]" placeholder="Localizacion">
+                            <td><select name="location" id="location" placeholder="Localizacion">
                                 <option value="Urbano" selected>Urbano</option>
                                 <option value="Naturaleza">Naturaleza</option>
                                 <option value="Interior">Interior</option>

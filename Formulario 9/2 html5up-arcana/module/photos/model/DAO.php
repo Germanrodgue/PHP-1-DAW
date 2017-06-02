@@ -11,7 +11,9 @@
         	    $form=$form."$indice:";
         	}
         		$form = ltrim($form);
-
+		$loc=' ';
+		
+        		
 			 $sql = "INSERT INTO usuarios(nombre, email, fecha, tipo, link, imgnombre, Descripcion, formato, Localizacion) VALUES ('$user[nombre]' , '$user[email]', '$user[fecha]', '$user[tipo]', '$user[link]', '$user[imgnombre]', '$user[descr]','$form', '$user[loc]')";
             
             $conexion = Conectar::con();
@@ -55,10 +57,12 @@
 		}
 		function update_user($user){
 			$form=' ';
+
 			foreach ($user['formato'] as $indice) {
         	    $form=$form."$indice:";
         	}
         	$form = ltrim($form);
+        	
 			 $sql = "UPDATE usuarios SET nombre='$user[nombre]', email='$user[email]', fecha='$user[fecha]', tipo='$user[tipo]', link='$user[link]', imgnombre='$user[imgnombre]', Descripcion='$user[descr]' ,formato='$form', Localizacion='$user[loc]'  WHERE id='$user[id]'";  
             $conexion = Conectar::con();
             $res = mysqli_query($conexion, $sql);
