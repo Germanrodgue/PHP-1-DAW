@@ -2,7 +2,7 @@
     <form autocomplete="on" method="post" name="delete_user" id="delete_user" action="index.php?page=controller_users&op=delete_all">
         <table border='0'>
             <tr>
-                <td align="center"  colspan="2"><h3>¿Desea seguro borrar a todos los usuarios? </h3></td>
+                <td align="center"  colspan="2"><h3>¿Desea seguro borrar todas las fotografías? </h3></td>
                 
             </tr>
             <tr>
