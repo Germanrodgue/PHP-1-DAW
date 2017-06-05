@@ -90,7 +90,7 @@ switch ($_GET['op']) {
                     die('<script>window.location.href="' . $callback . '";</script>');
                 } else {
                     $callback = 'index.php?page=503';
-                    die("no va");
+                    
                     die('<script>window.location.href="' . $callback . '";</script>');
                 }
                 //En el caso de enviar al usuario un correo y finalizar la aplicaci�n
@@ -102,7 +102,6 @@ switch ($_GET['op']) {
             }
         }
         try {
-
             $daouser        = new DAO();
             $rdo            = $daouser->select_user($_SESSION['user']['id']);
             $user           = get_object_vars($rdo);
