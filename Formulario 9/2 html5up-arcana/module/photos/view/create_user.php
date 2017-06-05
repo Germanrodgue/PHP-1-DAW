@@ -34,7 +34,8 @@
      
      <br>
      <span id="e_descr" class="styerror"></span>
-      <input name="descr" type="text" id="descr" class="descr" placeholder="Descripcion" class="descr" value="<?php echo $_POST?$_POST['descr']:""; ?>" /> 
+      
+     <textarea name="descr"  id="descr" class="descr" placeholder="Descripcion"  value="<?php echo $_POST?$_POST['descr']:""; ?>" ></textarea>
      
      <br>
     <div class="checkbox1">

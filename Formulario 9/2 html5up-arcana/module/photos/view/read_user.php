@@ -39,7 +39,7 @@
         </tr>
         
         <tr>
-            <td>Tipo: </td>
+            <td>Formato: </td>
             <td>
                 <?php
                     echo $user['tipo'];
@@ -74,6 +74,22 @@
             </td>
         </tr>
 
+         <tr>
+            <td>Tipo: </td>
+            <td>
+                <?php
+                    echo $user['formato'];
+                ?>
+            </td>
+        </tr>
+         <tr>
+            <td>Localizacion: </td>
+            <td>
+                <?php
+                    echo $user['Localizacion'];
+                ?>
+            </td>
+        </tr>
         
         <tr>
            

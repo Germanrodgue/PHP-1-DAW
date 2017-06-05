@@ -101,9 +101,15 @@ switch ($_GET['op']) {
                 //debug($error);
             }
         }
+        if (isset($_GET['id'])){
+           
+             $idup=$_GET['id'];
+        } else {
+            $idup=$_SESSION['user']['id'];
+        }
         try {
             $daouser        = new DAO();
-            $rdo            = $daouser->select_user($_SESSION['user']['id']);
+            $rdo            = $daouser->select_user($idup);
             $user           = get_object_vars($rdo);
             $_SESSION['id'] = $user['id'];
         }

@@ -37,7 +37,7 @@ function validate_imgnombre(imgnombre) {
 
 function validate_descr(descr) {
     if (descr.length > 0) {
-        var regexp = /^[a-zA-Z ]{5,20}$/i;
+        var regexp = /^[a-zA-Z ]*$/;
         return regexp.test(descr);
     }
     return false;
@@ -71,7 +71,7 @@ function validate_user() {
 
     var v_imgnombre = validate_imgnombre(imgnombre);
 
-    var v_descr = validate_imgnombre(descr);
+    var v_descr = validate_descr(descr);
     //var v_date_birthday = validate_date_birthday(date_birthday);
 
 

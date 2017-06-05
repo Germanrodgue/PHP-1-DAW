@@ -32,7 +32,7 @@
 			),
 			'descr' => array(
 				'filter'=>FILTER_VALIDATE_REGEXP,
-				'options'=>array('regexp'=>'/^[a-zA-Z ]{7,20}$/')
+				'options'=>array('regexp'=>'|^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$|')
 			),
 			'tipo' => array(
 				
@@ -67,7 +67,7 @@
 		}elseif(!$resultado['tipo']){
 			$error='El tipo debe ser correcto';
 		}elseif(!$resultado['descr']){
-			$error='La descripcion tiene que tener entre 5 y 20 caracteres';
+			$error='La descripcion debe tener entre 5 y 20 caracteres';
 		}else{
 			
 			 return $return=array('resultado'=>true,'error'=>$error,'datos'=>$resultado);
