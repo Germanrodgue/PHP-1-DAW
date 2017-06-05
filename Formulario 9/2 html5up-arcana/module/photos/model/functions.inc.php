@@ -1,35 +1,10 @@
 <?php
 
- function isImage($url)
+ function isImage($file)
   {
-  	
-     $url_headers=get_headers($url, 1);
-  	
-  	
-    if(isset($url_headers['Content-Type'])){
-
-        $type=strtolower($url_headers['Content-Type']);
-
-        $valid_image_type=array();
-        $valid_image_type['image/png']='';
-        $valid_image_type['image/jpg']='';
-        $valid_image_type['image/jpeg']='';
-        $valid_image_type['image/jpe']='';
-        $valid_image_type['image/gif']='';
-        $valid_image_type['image/tif']='';
-        $valid_image_type['image/tiff']='';
-        $valid_image_type['image/svg']='';
-        $valid_image_type['image/ico']='';
-        $valid_image_type['image/icon']='';
-        $valid_image_type['image/x-icon']='';
-
-        if(isset($valid_image_type[$type])){
-
-        	return true;
-
-        } 
-        	return false;
-    }
+  		 $size = getimagesize($file);
+   return (strtolower(substr($size['mime'], 0, 5)) == 'image' ? $file : false); 
+        	
 }
  
 	function validate_user(){
@@ -48,8 +23,8 @@
 				'options'=>array('regexp'=>'/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/')
 			),
 			'link' => array(
-				'filter'=>FILTER_VALIDATE_REGEXP,
-				'options'=>array('regexp'=>'/(https?:\/\/[^\s]+)/')
+				'filter'=>FILTER_CALLBACK,
+				'options'=>'isImage'
 			),
 			'imgnombre' => array(
 				'filter'=>FILTER_VALIDATE_REGEXP,
@@ -71,10 +46,11 @@
 		$resultado=filter_input_array(INPUT_POST,$filtro);
 		
 
-		if(isset($resultado['link'])){
+		/*if(isset($resultado['link'])){
 			
 			$link = isImage($resultado['link']);
-		}
+		}*/
+
 		if(!$resultado['nombre']){
 			$error='Nombre debe tener de 3 a 30 caracteres';
 		}elseif(!$resultado['correo']){
@@ -83,8 +59,6 @@
 			$error='La fecha debe cumplir el formato dd/mm/yyyy';
 		}elseif(!$resultado['link']){
 			$error='El link debe ser correcto';
-		}elseif(!$link){
-			$error='El link debe ser una imagen';
 		}elseif(!$resultado['imgnombre']){
 			$error='El nombre de la imagen debe ser correcto';
 		}elseif(!$resultado['tipo']){
@@ -92,6 +66,7 @@
 		}elseif(!$resultado['descr']){
 			$error='La descripcion tiene que tener entre 5 y 20 caracteres';
 		}else{
+			
 			 return $return=array('resultado'=>true,'error'=>$error,'datos'=>$resultado);
 		};
 		return $return=array('resultado'=>false , 'error'=>$error,'datos'=>$resultado);

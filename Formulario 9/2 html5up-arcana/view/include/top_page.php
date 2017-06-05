@@ -8,6 +8,7 @@
   <head>
     <title>Fotografias</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <!--[if lte IE 8]><script src="view/template/css/ie/html5shiv.js"></script><![endif]-->

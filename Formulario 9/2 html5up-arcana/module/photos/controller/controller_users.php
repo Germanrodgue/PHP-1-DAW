@@ -57,7 +57,7 @@ switch ($_GET['op']) {
             $result = validate_user();
             //debug($result);
             if ($result['resultado']) {
-                debug($_SESSION['id']);
+                
                 $arrArgument      = array(
                     'id' => $_SESSION['id'],
                     'nombre' => $result['datos']['nombre'],
@@ -102,8 +102,9 @@ switch ($_GET['op']) {
             }
         }
         try {
+
             $daouser        = new DAO();
-            $rdo            = $daouser->select_user($_GET['id']);
+            $rdo            = $daouser->select_user($_SESSION['user']['id']);
             $user           = get_object_vars($rdo);
             $_SESSION['id'] = $user['id'];
         }

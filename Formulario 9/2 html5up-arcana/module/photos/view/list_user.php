@@ -22,8 +22,8 @@
                 <span>' . $row['id'] . '</span>
                 <span> - ' . $row['imgnombre'] . '</span>
                 <span> - ' . $row['nombre'] . '</span> <br />
-               <a href="index.php?page=controller_users&op=update&id='.$row['id'].' text-decoration="none"><img src="view/img/update.png"></a>
-               <a href="index.php?page=controller_users&op=delete&id='.$row['id'].'" text-decoration="none"><img src="view/img/delete.png"></a>
+               <a href="index.php?page=controller_users&op=update&id='.$row['id'].' "><img src="view/img/update.png"></a>
+               <a href="index.php?page=controller_users&op=delete&id='.$row['id'].'" "><img src="view/img/delete.png"></a>
                 </a>';
          echo '</li> ';
          echo '</ul>';
