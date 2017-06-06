@@ -8,11 +8,18 @@ if(!$file_headers || $file_headers[0] == 'HTTP/1.0 404 Not Found') {
     return false;
     
 }
-if(!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') {
+if(!$file_headers || $file_headers[0] == 'HTTP/1.1 500 Internal Server Error') {
     return false;
     
 }
-else {
+if(!$file_headers || $file_headers[0] == 'HTTP/1.1 403') {
+    return false;
+    
+}
+if(!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') {
+    return false;
+    
+}else {
     $size = getimagesize($file);
 		return (strtolower(substr($size['mime'], 0, 5)) == 'image' ? $file : false); 
 } 	
