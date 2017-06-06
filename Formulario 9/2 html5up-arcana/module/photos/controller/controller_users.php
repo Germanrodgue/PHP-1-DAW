@@ -150,7 +150,7 @@ switch ($_GET['op']) {
         }
         include("module/photos/view/delete_user.php");
         break;
-        case 'delete_all';
+    case 'delete_all';
         if (isset($_POST['delete'])) {
             try {
                 $daouser = new DAO();
