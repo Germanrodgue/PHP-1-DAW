@@ -7,13 +7,14 @@
     <?php
     if(isset($error)){
       print ("<BR><span CLASS='styerror'>" . "* ".$error . "</span><br/>");
-    }?>
+    }
+    ?>
     <span id="e_nombre" class="styerror"></span>
     <input  type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?php echo $_POST?$_POST['nombre']:""; ?>" />
     
     <br>
     <span id="e_email" class="styerror"></span>
-    <input name="correo" type="text" id="correo" class="correo" placeholder="Email" paceholder_ value="<?php echo $_POST?$_POST['correo']:""; ?>" />
+    <input name="correo" type="text" id="correo" class="correo" placeholder="Email" value="<?php echo $_POST?$_POST['correo']:""; ?>" />
     
     <br>
     <span id="e_fecha" class="styerror"></span>

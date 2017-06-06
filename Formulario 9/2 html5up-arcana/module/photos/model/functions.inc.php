@@ -2,9 +2,20 @@
 
  function isImage($file)
   {
-  		 $size = getimagesize($file);
-   return (strtolower(substr($size['mime'], 0, 5)) == 'image' ? $file : false); 
-        	
+  	
+$file_headers = @get_headers($file);
+if(!$file_headers || $file_headers[0] == 'HTTP/1.0 404 Not Found') {
+    return false;
+    
+}
+if(!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') {
+    return false;
+    
+}
+else {
+    $size = getimagesize($file);
+		return (strtolower(substr($size['mime'], 0, 5)) == 'image' ? $file : false); 
+} 	
 }
  
 	function validate_user(){
