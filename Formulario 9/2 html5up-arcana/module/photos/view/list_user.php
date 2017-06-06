@@ -37,7 +37,7 @@
         foreach ($rdo as $row) {
 
             echo '<li>';
-            echo ' <p style="text-align:center"> <a href="index.php?page=controller_users&op=read&id=' . $row['id'] . '"><img src=' . $row['link'] . ' style="max-height: 300px; max-width: 300px;" border="0" alt=""/><br />
+            echo ' <p style="text-align:center; margin: 0 0 0.5em 0"> <a href="index.php?page=controller_users&op=read&id=' . $row['id'] . '"><img src=' . $row['link'] . ' style="max-height: 300px; max-width: 300px;" border="0" alt=""/><br />
             <span>' . $row['id'] . '</span>
             <span> - ' . $row['imgnombre'] . '</span>
             <span> - ' . $row['tipo'] . '</span> 

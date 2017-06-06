@@ -12,7 +12,7 @@ body {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url("/2intro_PHP/2%20html5up-arcana/view/img/search.png");
+    background-image: url("search.png");
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -77,6 +77,7 @@ input.checkbox1{
   
   
 }
+
 div.checkbox1{
 
 
@@ -325,11 +326,11 @@ label{
   display: inline-block;
   margin: 5px;
   padding: 5px 7px;
-  
+   border: 7px solid #2980b9;
+    border-radius: 12px;
 }
 
 span {
   color: black;
 }
-
 
