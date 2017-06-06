@@ -26,7 +26,7 @@
       <link rel="stylesheet" href="view/template/css/skel.css" />
       <link rel="stylesheet" href="view/template/css/style.css" />
       <link rel="stylesheet" href="view/template/css/style-wide.css" />
-   
+  
     <!--[if lte IE 8]><link rel="stylesheet" href="view/template/css/ie/v8.css" /><![endif]-->
   </head>
   <body>

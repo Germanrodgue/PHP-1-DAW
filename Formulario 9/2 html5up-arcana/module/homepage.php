@@ -1,6 +1,7 @@
-	<!-- Header -->
-	<!-- Banner -->
-	<section class="wrapper style1">
+
+
+<section class="wrapper style1">
+
 		<div class="container">
 			<div class="row">
 				<section class="6u 12u(narrower)">

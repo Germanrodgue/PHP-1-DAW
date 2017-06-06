@@ -7,7 +7,7 @@
 
 <div>
     <p>
-        <input type="text" id="myInput" onkeyup="Funcion_Buscador()" placeholder="Buscar por nombre, id...">
+        <input type="text"  id="myInput" onkeyup="Funcion_Buscador()" placeholder="Buscar por nombre, id...">
     </p>
 
 
@@ -42,6 +42,7 @@
             <span> - ' . $row['imgnombre'] . '</span>
             <span> - ' . $row['tipo'] . '</span> 
             <span> - ' . $row['Localizacion'] . '</span> <br />
+            
             <a href="index.php?page=controller_users&op=update&id=' . $row['id'] . ' "><img src="view/img/update.png"  /></a> 
             <a href="index.php?page=controller_users&op=delete&id=' . $row['id'] . '" "><img src="view/img/delete.png"  /></a> 
             </a></p>';
