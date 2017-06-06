@@ -17,7 +17,16 @@ The web mainly allows **Create**, **Read**, **Update** and **Delete**
 When we click on the CRUD menu, we will see a list of all the photographies that are located on the database.
 
 <p align="center">
-  <img src="https://image.prntscr.com/image/6db7176fb2d0431ba9c405077d7413d5.png" width="250"/>
+  <img src="https://image.prntscr.com/image/6db7176fb2d0431ba9c405077d7413d5.png" width="450"/>
+</p>
+
+**1.1) Search Bar**
+
+The List option has a search bar used to find photographies. You can search by id, name, type of photography, format, etc..
+
+
+<p align="center">
+  <img src="https://image.prntscr.com/image/a3310a8137bd45ccbe1161c1c1e318a3.png" width="450"/>
 </p>
 
 **2) Create**
@@ -25,7 +34,7 @@ When we click on the CRUD menu, we will see a list of all the photographies that
 We can fill up this form with information about us and the photography. Every field has a validation on PHP and javascript. The link of the photography has to be an image, otherwise it will show that the link is invalid.
 
  <p align="center">
-  <img src="https://image.ibb.co/mHqhfv/Screenshot_3.png" width="250"/>
+  <img src="https://image.ibb.co/mHqhfv/Screenshot_3.png" width="450"/>
 </p>
 
 **3) Read**
@@ -33,14 +42,14 @@ We can fill up this form with information about us and the photography. Every fi
 We show the information about the user that has uploaded the photography and also the information about the photography.
 
   <p align="center">
-  <img src="https://image.prntscr.com/image/2021e19be8d74511a92fc93be52772e9.png" width="250"/>
+  <img src="https://image.prntscr.com/image/2021e19be8d74511a92fc93be52772e9.png" width="450"/>
 </p>
 
 **4) Update**
 
 In this option we can update the information of a photography, it will show the same form as the create option.
  <p align="center">
-  <img src="https://image.prntscr.com/image/6311adda67b34349b02e988ceaca32a7.png" width="250"/>
+  <img src="https://image.prntscr.com/image/6311adda67b34349b02e988ceaca32a7.png" width="450"/>
 </p>
 
 **5) Borrar**
@@ -48,10 +57,10 @@ In this option we can update the information of a photography, it will show the 
 We have two options here, delete all the photographies or delete just one.
 
  <p align="center">
-  <img src="https://image.prntscr.com/image/0fdbda873d8544cf9dfed279bb5a6a03.png" width="250"/>
+  <img src="https://image.prntscr.com/image/0fdbda873d8544cf9dfed279bb5a6a03.png" width="450"/>
 </p>
   <p align="center">
-  <img src="https://image.prntscr.com/image/6fc213aa5e1d4b04b9b592b2fdd1ffe2.png" width="250"/>
+  <img src="https://image.prntscr.com/image/6fc213aa5e1d4b04b9b592b2fdd1ffe2.png" width="450"/>
 </p>
 
 
