@@ -1,11 +1,11 @@
 <?php
 
 if ((isset($_GET['page'])) && ($_GET['page']==="controller_users") ){
-
 	include("view/include/top_page_users.php");
 }else{
 	include("view/include/top_page.php");
 }
+
 session_start();
 if ((isset($_GET['page']))){
 
@@ -13,7 +13,7 @@ if ((isset($_GET['page']))){
 	
 } else {
 
-	$_SESSION['page']="home";		
+	$_SESSION['page']="homepage";		
 }
 ?>
 <div id="wrapper">		

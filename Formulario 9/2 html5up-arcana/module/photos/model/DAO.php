@@ -11,7 +11,7 @@
         	    $form=$form."$indice:";
         	}
         		$form = ltrim($form);
-		$loc=' ';
+			$loc=' ';
 		
         		
 			 $sql = "INSERT INTO usuarios(nombre, email, fecha, tipo, link, imgnombre, Descripcion, formato, Localizacion) VALUES ('$user[nombre]' , '$user[email]', '$user[fecha]', '$user[tipo]', '$user[link]', '$user[imgnombre]', '$user[descr]','$form', '$user[loc]')";
@@ -29,6 +29,7 @@
 			$conexion =  Conectar::con();
             $res = mysqli_query($conexion, $sql);
             Conectar::close($conexion);
+
             return $res;
 		}
 		function select_count(){
@@ -41,10 +42,14 @@
 		}
 		function select_user($user){
 			$sql = "SELECT * FROM usuarios WHERE id='$user'";
-			
-			$conexion = Conectar::con();
-            $res = mysqli_query($conexion, $sql)->fetch_object();
-            Conectar::close($conexion);
+				try {
+					$conexion = Conectar::con();
+		            $res = mysqli_query($conexion, $sql)->fetch_object();
+		            Conectar::close($conexion);
+	            } catch (Exception $e) {
+				    $callback = 'index.php?page=503';
+				    die('<script>window.location.href="' . $callback . '";</script>');
+				}
             return $res;
 		}
 		function select_user_id($user){
@@ -85,5 +90,17 @@
             Conectar::close($conexion);
             return $res;
 		}
+
+		function check_login($login){
+
+			$sql = "SELECT * FROM login WHERE usuario='$login'";
+
+
+			$conexion = Conectar::login();
+            $res = mysqli_query($conexion, $sql)->fetch_object();
+            Conectar::close($conexion);
+            return $res;
+		}
+
 
 	}

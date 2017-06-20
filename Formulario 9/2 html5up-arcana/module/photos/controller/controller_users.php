@@ -76,14 +76,10 @@ switch ($_GET['op']) {
                 //redirigir a otra p�gina con los datos de $arrArgument y $mensaje
             $_SESSION['user'] = $arrArgument;
                 //header("Location:index.php?page=results_user1");
-            try {
+           
                 $daouser = new DAO();
                 $rdo     = $daouser->update_user($_SESSION['user']);
-            }
-            catch (Exception $e) {
-                $callback = 'index.php?page=503';
-                die('<script>window.location.href="' . $callback . '";</script>');
-            }
+            
             if ($rdo) {
                 echo '<script language="javascript">alert("Actualizado en la base de datos correctamente")</script>';
                 $callback = 'index.php?page=controller_users&op=list';
@@ -107,26 +103,32 @@ switch ($_GET['op']) {
    } else {
     $idup= $_SESSION['id'];
 }
-try {
-    $daouser        = new DAO();
-    $rdo            = $daouser->select_user($idup);
-    $user           = get_object_vars($rdo);
-    $_SESSION['id'] = $user['id'];
-}
-catch (Exception $e) {
-    $callback = 'index.php?page=503';
-    die('<script>window.location.href="' . $callback . '";</script>');
-}
+   
+        $daouser        = new DAO();
+        $rdo            = $daouser->select_user($idup);
+         if ($rdo) {
+        $user           = get_object_vars($rdo);
+        $_SESSION['id'] = $user['id'];
+    } else {
+        $callback = 'index.php?page=503';
+        die('<script>window.location.href="' . $callback . '";</script>');
+    }
 include("module/photos/view/update_user.php");
 break;
+
 case 'read';
+
+
 $daouser = new DAO();
 $rdo     = $daouser->select_user($_GET['id']);
+if ($rdo) {
 $user    = get_object_vars($rdo);
 
+include("module/photos/view/read_user.php");
+} else {
 
-if ($rdo) {
-    include("module/photos/view/read_user.php");
+    $callback = 'index.php?page=503';
+    die('<script>window.location.href="' . $callback . '";</script>');
 }
 break;
 case 'delete';
